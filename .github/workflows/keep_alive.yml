@@ -2,8 +2,11 @@ name: Keep Streamlit App Alive
 
 on:
   schedule:
-    - cron: '0 * * * *'   # Every 1 hour
+    - cron: '0 * * * *'
   workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   ping:
