@@ -2,8 +2,8 @@ name: Keep Streamlit App Alive
 
 on:
   schedule:
-    - cron: '0 */1 * * *'   # Runs every 6 hours automatically
-  workflow_dispatch:          # Also lets you run it manually
+    - cron: '0 * * * *'   # Every 1 hour
+  workflow_dispatch:
 
 jobs:
   ping:
@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
